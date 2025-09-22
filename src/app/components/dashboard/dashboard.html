@@ -1,0 +1,10 @@
+<div class="container">
+    @for (item of items; track item) {
+        <mat-card class="dashboard-item" [routerLink]="item.url">
+            <mat-card-header class="content">
+                <mat-icon>{{ item.icon }}</mat-icon>
+                <mat-card-title>{{ item.title }}</mat-card-title>
+            </mat-card-header>
+        </mat-card>
+    }
+</div>
