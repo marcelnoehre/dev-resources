@@ -6,7 +6,8 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "dev": "ng serve --host 0.0.0.0"
   },
   "prettier": {
     "printWidth": 100,
@@ -22,10 +23,12 @@
   },
   "private": true,
   "dependencies": {
+    "@angular/cdk": "^20.2.4",
     "@angular/common": "^20.2.0",
     "@angular/compiler": "^20.2.0",
     "@angular/core": "^20.2.0",
     "@angular/forms": "^20.2.0",
+    "@angular/material": "^20.2.4",
     "@angular/platform-browser": "^20.2.0",
     "@angular/router": "^20.2.0",
     "rxjs": "~7.8.0",
