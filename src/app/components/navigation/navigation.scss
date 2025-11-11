@@ -1,0 +1,67 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 7.5vh;
+    width: 100vw;
+    background-color: var(--background);
+    z-index: 888;
+}
+
+.sticky {
+    position: sticky;
+    top: 0;
+    border-bottom: 1px solid var(--secondary);
+}
+
+.logo {
+    font-size: 3vh;
+    padding-left: 0.5em;
+    cursor: pointer;
+}
+
+.nav {
+    position: absolute;
+    display: flex;
+    justify-content: flex-end;
+    inset: auto 1em auto auto;
+    gap: 2em;
+
+    div {
+        position: relative;
+        padding: 0.25em;
+        opacity: 0.5;
+        transition: opacity 0.3s ease;
+        color: var(--text);
+        font-family: 'LemonMilk';
+        font-size: 0.85em;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    div::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        height: 2px;
+        width: 0;
+        background: var(--primary);
+        transform: translateX(-50%);
+        transition: width 0.3s ease, background-color 0.3s ease;
+    }
+
+    div:hover {
+        opacity: 1;
+    }
+
+    div:hover::after {
+        width: 100%;
+    }
+}
+
+.menu-item {
+    font-family: 'LemonMilk';
+    text-align: center;
+    cursor: pointer;
+}

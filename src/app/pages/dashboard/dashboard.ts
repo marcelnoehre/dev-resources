@@ -4,11 +4,12 @@ import { DashboardItem } from '../../interfaces/dashboard-item';
 import { RouterModule } from '@angular/router';
 import { Data } from '../../services/data';
 import { MatIconModule } from '@angular/material/icon';
+import { Navigation } from '../../components/navigation/navigation';
 import { Contact } from '../../components/contact/contact';
 
 @Component({
   selector: 'app-dashboard',
-  imports: [RouterModule, MatCardModule, MatIconModule, Contact],
+  imports: [RouterModule, MatCardModule, MatIconModule, Navigation, Contact],
   templateUrl: './dashboard.html',
   styleUrl: './dashboard.scss'
 })
