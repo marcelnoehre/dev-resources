@@ -1,0 +1,60 @@
+{
+    "socials": [
+        {
+            "name": "Mail",
+            "url": "mailto:",
+            "class": "fas fa-envelope icon",
+            "target": "_blank",
+            "color": "#106cbd"
+        },
+        {
+            "name": "University of Kassel",
+            "url": "",
+            "class": "fas fa-building-columns icon",
+            "target": "_blank",
+            "color": "#c71564"
+        },
+        {
+            "name": "LinkedIn",
+            "url": "https://www.linkedin.com/in/marcel-nöhre-155377235/",
+            "class": "fab fa-linkedin-in icon",
+            "target": "_blank",
+            "color": "#0072b1"
+        },
+        {
+            "name": "ORCID",
+            "url": "https://orcid.org/0009-0005-4089-2925",
+            "class": "fab fa-orcid icon",
+            "target": "_blank",
+            "color": "#a6ce39"
+        },
+        {
+            "name": "Google Scholar",
+            "url": "",
+            "class": "fab fa-google-scholar icon",
+            "target": "_blank",
+            "color": "#4285f4"
+        },
+        {
+            "name": "ResearchGate",
+            "url": "",
+            "class": "fab fa-researchgate icon",
+            "target": "_blank",
+            "color": "#40ba9c"
+        },
+        {
+            "name": "BibSonomy",
+            "url": "https://www.bibsonomy.org/user/noehre",
+            "class": "fas fa-b icon",
+            "target": "_blank",
+            "color": "#006699"
+        },
+        {
+            "name": "GitHub",
+            "url": "https://github.com/marcelnoehre",
+            "class": "fab fa-github icon",
+            "target": "_blank",
+            "color": "#010409"
+        }
+    ]
+}

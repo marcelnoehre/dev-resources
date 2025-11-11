@@ -1,0 +1,20 @@
+<div class="contact-container">
+    <div class="visible-container">
+        <svg viewBox="0 0 500 45" preserveAspectRatio="xMinYMin meet" style="transform: translateY(-2px)">
+            <path d="M0,25 C150,75 350,0 500,25 L500,00 L0,0 Z" style="stroke: none; fill: transparent"></path>
+        </svg>
+        
+        <div class="content">
+            <ul>
+                @for (social of contact; track social) {
+                    <li>
+                        <a [href]="social.url" [target]="social.target" [style.--social-color]="social.color">
+                            <i [class]="social.class"></i>
+                        </a>
+                    </li>
+                }
+            </ul>
+        </div>
+    </div>
+    <div class="copyright">&copy; {{ year }} | Marcel Nöhre</div>
+</div>
