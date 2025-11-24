@@ -7,10 +7,10 @@ export class Theme {
 
   constructor(private _storage: Storage) {
     const session = this._storage.getLocalEntry(this._DARK_MODE);
-    this.setDarkMode(session ? session === 'true' : (window.matchMedia('(prefers-color-scheme: dark)').matches));
+    this._setTheme(session ? session === 'true' : (window.matchMedia('(prefers-color-scheme: dark)').matches));
   }
 
-  setDarkMode(isDark: boolean) {
+  private _setTheme(isDark: boolean) {
     if (isDark) {
       document.documentElement.classList.add(this._DARK_MODE);
       this._storage.setLocalEntry(this._DARK_MODE, true);
@@ -21,8 +21,8 @@ export class Theme {
     }
   }
 
-  toggleDarkMode() {
-    this.setDarkMode(!document.documentElement.classList.contains(this._DARK_MODE));
+  toggleTheme() {
+    this._setTheme(!this.isDarkMode());
   }
 
   isDarkMode(): boolean {

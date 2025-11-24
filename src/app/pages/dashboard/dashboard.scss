@@ -5,7 +5,7 @@
   height: 50vh;
   gap: 2rem;
   padding: 2.5rem;
-  background-color: #181818;
+  background-color: var(--background);
 }
 
 .dashboard-item {
@@ -13,6 +13,7 @@
   aspect-ratio: 1 / 1;
   border-radius: 16px;
   background: var(--primary);
+  color: var(--text-primary);
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
