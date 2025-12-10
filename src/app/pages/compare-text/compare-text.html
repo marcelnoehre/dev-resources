@@ -1,0 +1,46 @@
+<app-navigation [home]="false" class="home-nav"></app-navigation>
+<div class="compare-text-container">
+    <div class="title">
+        <h1>Compare Text</h1>
+        <button mat-icon-button class="info-button" (click)="openInfo()">
+            <mat-icon>info</mat-icon>
+        </button>
+    </div>
+    <mat-button-toggle-group [(ngModel)]="comparisonMode" (change)="comparisonMode = $event.value">
+        <mat-button-toggle value="lines">Lines</mat-button-toggle>
+        <mat-button-toggle value="words">Words</mat-button-toggle>
+    </mat-button-toggle-group>
+    <div class="text-container">
+      <textarea [(ngModel)]="textLeft" placeholder="Left Text"></textarea>
+      <textarea [(ngModel)]="textRight" placeholder="Right text"></textarea>
+    </div>
+    <button mat-raised-button (click)="compareTexts()">Compare</button>
+    @if (result.length) {
+        <table>
+            @for (row of result; track row) {
+                <tr>
+                    @for (item of row; track item; let i = $index) {
+                        @if (isArray(item)) {
+                            <td [style.background-color]="i === 0 ? '#FED' : '#DEF'">
+                                @for (subitem of item; track subitem) {
+                                    <span [style.background-color]="subitem.bg">{{ subitem.value }}</span>
+                                    <span>&nbsp;</span>
+                                }
+                            </td>
+                        } @else {
+                            <td [style.background-color]="item.bg">{{ item.value }}</td>
+                        }
+                    }
+                </tr>
+            }
+        </table>
+        <button mat-mini-fab (click)="reset()">
+            <mat-icon>restart_alt</mat-icon>
+        </button>
+    }
+</div>
+<svg viewBox="0 0 500 50" preserveAspectRatio="xMinYMin meet" style="transform: translateY(-2px); margin-bottom: auto">
+    <path d="M0,25 C150,75 350,0 500,25 L500,00 L0,0 Z" style="stroke: none;"></path>
+</svg>
+<div class="contact-spacer"></div>
+<app-contact></app-contact>

@@ -20,7 +20,7 @@ export class AnsiColors implements OnInit {
   constructor(private _data: Data) { }
 
   ngOnInit() {
-    this.colors = this._data.getAnsiColors();
+    this.colors = this._data.ansiColors;
   }
 
 }

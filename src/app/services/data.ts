@@ -26,10 +26,11 @@ export class Data {
     return contactData.socials;
   }
 
-  public getAnsiColors(): AnsiColorItems {
+  public get ansiColors(): AnsiColorItems {
     return {
       basic: ansiColorsData.basic,
       special: ansiColorsData.special
     }
   }
+  
 }
