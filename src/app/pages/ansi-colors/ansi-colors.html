@@ -1,0 +1,41 @@
+<app-navigation [home]="false" class="home-nav"></app-navigation>
+<div class="ansi-colors-container">
+    <h1>ANSI Color Codes</h1>
+    <h3>Basic Colors</h3>
+    <div class="color-container">
+        @for (item of colors.basic; track item) {
+            <div class="color-row" style="--color: {{ item.color }}; --bg-color: {{item.bgColor}}">
+                <button [cdkCopyToClipboard]="item.code" mat-icon-button>
+                    <mat-icon>content_copy</mat-icon>
+                </button>
+                <div class="ansi-code">
+                    <span>{{ item.code }}</span>
+                </div>
+                <div class="color-description">
+                    <span>{{ item.desc }}</span>
+                </div>
+            </div>
+        }
+    </div>
+    <h3>Special Sequences</h3>
+    <div class="color-container">
+        @for (item of colors.special; track item) {
+            <div class="color-row" style="--color: {{ item.color }}; --bg-color: {{item.bgColor}}">
+                <button [cdkCopyToClipboard]="item.code" mat-icon-button>
+                    <mat-icon>content_copy</mat-icon>
+                </button>
+                <div class="ansi-code">
+                    <span>{{ item.code }}</span>
+                </div>
+                <div class="color-description">
+                    <span>{{ item.desc }}</span>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+<svg viewBox="0 0 500 50" preserveAspectRatio="xMinYMin meet" style="transform: translateY(-2px); margin-bottom: auto">
+    <path d="M0,25 C150,75 350,0 500,25 L500,00 L0,0 Z" style="stroke: none;"></path>
+</svg>
+<div class="contact-spacer"></div>
+<app-contact></app-contact>

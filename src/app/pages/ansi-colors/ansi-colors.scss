@@ -1,0 +1,42 @@
+.ansi-colors-container {
+    padding: 1rem;
+    width: calc(100vw - 2rem);
+    overflow: hidden;
+    background-color: var(--background);
+}
+
+h1, h3 {
+    color: var(--text);
+    text-align: center;
+}
+
+.color-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+.color-row {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem;
+    border-radius: 5px;
+    background-color: var(--bg-color);
+    color: var(--color);
+}
+
+.ansi-code {
+    font-family: monospace;
+    font-size: 1rem;
+    padding: 0 0.5rem;
+}
+  
+.color-description {
+    font-size: 0.9rem;
+}
+
+@media (min-width: 576px) {
+    .color-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
