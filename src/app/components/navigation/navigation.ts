@@ -21,6 +21,7 @@ export class Navigation implements OnInit {
   protected navigation: NavigationItem[] = [];
   protected path: string = '';
   protected themeIcon: string = '';
+  protected basePath: string = 'https://marcel-noehre.de/'
 
   constructor(
     private _router: Router,
@@ -38,10 +39,12 @@ export class Navigation implements OnInit {
   }
 
   protected redirect(route: string | undefined): void {
-    if (route) {
+    if (route == '/') {
       this._router.navigate([route]).then(() => {
-        window.scrollTo(0, 0)
+          window.scrollTo(0, 0)
       });
+    } else if (route) {
+      window.location.href = this.basePath + route
     } else {
       window.scrollTo({
         top: window.document.body.scrollHeight,

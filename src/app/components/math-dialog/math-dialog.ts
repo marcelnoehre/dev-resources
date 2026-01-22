@@ -12,7 +12,7 @@ import { MatInputModule } from '@angular/material/input';
   styleUrl: './math-dialog.scss'
 })
 export class MathDialog {
-  inputValue = ''
+  protected inputValue = ''
 
   constructor(
     public dialogRef: MatDialogRef<MathDialog>,

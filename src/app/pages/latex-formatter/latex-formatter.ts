@@ -22,16 +22,15 @@ import { CommonModule } from '@angular/common';
   styleUrl: './latex-formatter.scss'
 })
 export class LatexFormatter implements OnInit {
-  inputText = '';
-  outputText = '';
-  mode: FormatterMode.SPLIT | FormatterMode.JOIN = FormatterMode.SPLIT;
-  charKey = 'latex-formatter-chars';
-  chars: number = 100;
-  replaceMathSnippets: boolean = false;
-  replaceMap: { [key: string]: string } = {};
-  inlinePattern = /\\\((.*?)\\\)/gs
-  displayPattern = /\\\[(.*?)\\\]/gs
-
+  protected inputText = '';
+  protected outputText = '';
+  protected mode: FormatterMode.SPLIT | FormatterMode.JOIN = FormatterMode.SPLIT;
+  protected charKey = 'latex-formatter-chars';
+  protected chars: number = 100;
+  protected replaceMathSnippets: boolean = false;
+  protected replaceMap: { [key: string]: string } = {};
+  protected inlinePattern = /\\\((.*?)\\\)/gs
+  protected displayPattern = /\\\[(.*?)\\\]/gs
 
   constructor(
     private _snackbar: Snackbar,
