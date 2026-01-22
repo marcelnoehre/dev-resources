@@ -39,12 +39,13 @@ export class Navigation implements OnInit {
   }
 
   protected redirect(route: string | undefined): void {
-    if (route == '/') {
+    if (route === '/') {
       this._router.navigate([route]).then(() => {
           window.scrollTo(0, 0)
       });
     } else if (route) {
-      window.location.href = this.basePath + route
+      window.location.href = this.basePath + (route === '/portfolio' ? '' : route)
+
     } else {
       window.scrollTo({
         top: window.document.body.scrollHeight,

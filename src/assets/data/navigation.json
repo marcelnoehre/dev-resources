@@ -2,10 +2,6 @@
     "navigation": [
         {
             "title": "Home",
-            "route": "/home"
-        },
-        {
-            "title": "Dashboard",
             "route": "/"
         },
         {

@@ -7,7 +7,8 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "dev": "ng serve --host 0.0.0.0"
+    "dev": "ng serve --host 0.0.0.0",
+    "deploy": "ng deploy --cname=marcel-noehre.de/resources --repo=https://github.com/marcelnoehre/resources.git"
   },
   "prettier": {
     "printWidth": 100,
@@ -32,6 +33,7 @@
     "@angular/platform-browser": "^20.2.0",
     "@angular/router": "^20.2.0",
     "@fortawesome/fontawesome-free": "^7.1.0",
+    "angular-cli-ghpages": "^3.0.2",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.15.0"

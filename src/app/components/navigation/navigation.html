@@ -1,6 +1,6 @@
 <div class="container" [class]="home ? '' : 'sticky'">
     @if (!home) {
-        <div class="mixed-color logo" (click)="redirect('/')">
+        <div class="mixed-color logo" (click)="redirect('/portfolio')">
             @for (char of name; track $index) {
                 <div [innerHTML]="char"></div>
             }
