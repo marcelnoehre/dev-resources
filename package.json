@@ -8,7 +8,7 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "dev": "ng serve --host 0.0.0.0",
-    "deploy": "ng deploy --cname=marcel-noehre.de/resources --repo=https://github.com/marcelnoehre/resources.git"
+    "deploy": "ng deploy --cname=marcel-noehre.de/dev-resources --repo=https://github.com/marcelnoehre/dev-resources.git"
   },
   "prettier": {
     "printWidth": 100,
