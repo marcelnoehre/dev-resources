@@ -1,0 +1,79 @@
+.latex-formatter-container {
+    padding: 1rem;
+    width: calc(100vw - 2rem);
+    overflow: hidden;
+    background-color: var(--background);
+}
+
+.title {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: relative;
+
+    .info-button {
+        position: absolute;
+        top: 1rem;
+        left: 1rem;
+        color: var(--text);
+        cursor: pointer;
+    }
+}
+
+h1 {
+    color: var(--text);
+}
+
+.chars {
+    position: absolute;
+    top: 15vh;
+    right: calc(2.5vw + 1rem);
+    width: 5rem;
+
+    input {
+        color: var(--text);
+    }
+}
+
+.toggle {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+}
+
+mat-button-toggle-group {
+    border-radius: 10px;
+    padding: 1rem;
+    display: inline-flex;
+    box-shadow: none !important;
+}
+  
+mat-button-toggle {
+    color: var(--text);
+}
+  
+mat-button-toggle.mat-button-toggle-checked {
+    color: var(--text);
+    border-radius: 5px;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 1rem;
+}
+  
+textarea {
+    box-sizing: border-box;
+    width: 95%;
+    height: 25vh;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.action {
+    width: 95%;
+}

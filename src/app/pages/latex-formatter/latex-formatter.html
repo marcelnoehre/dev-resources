@@ -1,0 +1,31 @@
+<app-navigation [home]="false" class="home-nav"></app-navigation>
+<div class="latex-formatter-container">
+    <div class="title">
+        <h1>LaTex Formatter</h1>
+        <button mat-icon-button class="info-button" (click)="openInfo()">
+            <mat-icon>info</mat-icon>
+        </button>
+    </div>
+
+
+    <mat-form-field appearance="outline" class="chars">
+        <input matInput type="number" [(ngModel)]="chars" (ngModelChange)="onCharsChange($event)">
+    </mat-form-field>
+    <div class="toggle">
+        <mat-button-toggle-group [(ngModel)]="mode" appearance="legacy" exclusive>
+            <mat-button-toggle value="split">Split (~ {{ chars }} chars)</mat-button-toggle>
+            <mat-button-toggle value="join">Join (1-liner)</mat-button-toggle>
+        </mat-button-toggle-group>
+    </div>
+    <div class="content">
+        <textarea [(ngModel)]="inputText" cols="80" placeholder="Enter your text here..."></textarea>
+        <button mat-raised-button class="action" (click)="processText()">Convert</button>
+        <textarea [value]="outputText" cols="80" readonly></textarea>
+        <button mat-raised-button class="action" (click)="copy()">Copy</button>
+    </div>
+</div>
+<svg viewBox="0 0 500 50" preserveAspectRatio="xMinYMin meet" style="transform: translateY(-2px); margin-bottom: auto">
+    <path d="M0,25 C150,75 350,0 500,25 L500,00 L0,0 Z" style="stroke: none;"></path>
+</svg>
+<div class="contact-spacer"></div>
+<app-contact></app-contact>
