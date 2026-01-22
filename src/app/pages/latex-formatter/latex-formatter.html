@@ -23,6 +23,35 @@
         <textarea [value]="outputText" cols="80" readonly></textarea>
         <button mat-raised-button class="action" (click)="copy()">Copy</button>
     </div>
+    <div class="math-replacements">
+        <div class="math-toggle">
+            <mat-slide-toggle [(ngModel)]="replaceMathSnippets" (change)="toggleReplaceMathSnippets()"></mat-slide-toggle>
+        </div>
+        <div class="title">
+            <h1>Math Mode Replacements</h1>
+        </div>
+        <div class="replacements">
+            <h2>Replacements</h2>
+            <table>
+                <tr>
+                    <th>Original</th>
+                    <th>Replacement</th>
+                    <th>Actions</th>
+                </tr>
+                @for (entry of replaceMap | keyvalue; track entry.key) {
+                    <tr>
+                        <td>{{ entry.key }}</td>
+                        <td>{{ entry.value }}</td>
+                        <td>
+                            <button mat-icon-button (click)="removeReplacement(entry.key)">
+                                <mat-icon>delete</mat-icon>
+                            </button>
+                        </td>
+                    </tr>
+                }
+            </table>
+        </div>
+    </div>
 </div>
 <svg viewBox="0 0 500 50" preserveAspectRatio="xMinYMin meet" style="transform: translateY(-2px); margin-bottom: auto">
     <path d="M0,25 C150,75 350,0 500,25 L500,00 L0,0 Z" style="stroke: none;"></path>
