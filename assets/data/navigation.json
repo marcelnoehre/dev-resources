@@ -1,0 +1,23 @@
+{
+    "navigation": [
+        {
+            "title": "Home",
+            "route": "/"
+        },
+        {
+            "title": "Publications",
+            "route": "/publications"
+        },
+        {
+            "title": "Projects",
+            "route": "/projects"
+        },
+        {
+            "title": "CV",
+            "route": "/cv"
+        },
+        {
+            "title": "Contact"
+        }
+    ]
+}

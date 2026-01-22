@@ -1,0 +1,19 @@
+{
+    "apps": [
+        { 
+            "title": "ANSI Colors", 
+            "icon": "palette", 
+            "url": "/ansi-colors"
+        },
+        { 
+            "title": "Compare Text",
+            "icon": "compare", 
+            "url": "/compare-text"
+        },
+        { 
+            "title": "Latex Formatter",
+            "icon": "text_fields",
+            "url": "/latex-formatter"
+        }
+    ]
+}
