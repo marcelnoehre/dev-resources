@@ -29,8 +29,9 @@ export class LatexFormatter implements OnInit {
   protected chars: number = 100;
   protected replaceMathSnippets: boolean = false;
   protected replaceMap: { [key: string]: string } = {};
-  protected inlinePattern = /\\\((.*?)\\\)/gs
-  protected displayPattern = /\\\[(.*?)\\\]/gs
+  protected texPattern = /\\\( (.*?) \\\)|(?<!\$)\$(?!\$)(.*?)(?<!\$)\$(?!\$)/gs;
+  protected inlinePattern = /\\\((.*?)\\\)/gs;
+  protected displayPattern = /\\\[(.*?)\\\]/gs;
 
   constructor(
     private _snackbar: Snackbar,
@@ -70,7 +71,7 @@ export class LatexFormatter implements OnInit {
     const res: string[] = [];
     let tmp = '';
 
-    const tokens = text.match(/(?:\\\(.*?\\\)|[^\s])+/g) || [];
+    const tokens = text.match(/(?:\\\(.*?\\\)|(?<!\$)\$(?!\$)(.*?)(?<!\$)\$(?!\$)|[^\s])+/g) || [];
     tokens.forEach((token) => {
       if ((tmp + ' ' + token).trim().length > max) {
         if (tmp.trim()) res.push(tmp.trim());
@@ -111,8 +112,19 @@ export class LatexFormatter implements OnInit {
   public async replaceMath() {
     let text = this.inputText.replace(/\r\n/g, '\n');
 
+    const texMatches = Array.from(text.matchAll(this.texPattern), m => m[0]);
     const inlineMatches = Array.from(text.matchAll(this.inlinePattern), m => m[1]);
     const displayMatches = Array.from(text.matchAll(this.displayPattern), m => m[1]);
+
+    for (const match of texMatches) {
+      if (this.replaceMap[match]) {
+        text = text.split(match).join(this.replaceMap[match]);
+      } else {
+        const res = await this.check(match);
+        if (res == '') continue;
+        text = text.split(match).join(res);
+      }
+    }
 
     for (const match of inlineMatches) {
       if (this.replaceMap[match]) {
