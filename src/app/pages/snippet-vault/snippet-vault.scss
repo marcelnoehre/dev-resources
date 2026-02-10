@@ -1,0 +1,43 @@
+.snippet-vault-container {
+    padding: 1rem;
+    width: calc(100vw - 2rem);
+    overflow: hidden;
+    background-color: var(--background);
+}
+
+.title {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+h1 {
+    color: var(--text);
+}
+
+.add-snippet-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.snippet-card {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem;
+    border-radius: 5px;
+    background-color: var(--grid);
+    color: var(--text);
+    mat-icon {
+        color: var(--text);
+    }
+}
+
+.remove-snipet {
+    margin-left: auto;
+
+    mat-icon {
+        color: var(--delete);
+    }
+}

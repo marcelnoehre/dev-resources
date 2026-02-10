@@ -1,0 +1,41 @@
+<app-navigation [home]="false" class="home-nav"></app-navigation>
+<div class="snippet-vault-container">
+    <h1>Snippet Vault</h1>
+    <div class="snippet-container">
+        @for (snippet of snippets; track snippet; let i = $index) {
+            <div class="snippet-card">
+                <button [cdkCopyToClipboard]="snippet.content" mat-icon-button>
+                    <mat-icon>content_copy</mat-icon>
+                </button>
+                <div class="snippet-title">
+                    <span>{{ snippet.title }}</span>
+                </div>
+                <button mat-icon-button (click)="removeSnippet(i)" class="remove-snipet">
+                    <mat-icon>delete</mat-icon>
+                </button>
+            </div>
+        } @empty {
+            <p>No snippets saved yet. Add one below!</p>
+        }
+    </div>
+    <h1>Add new Snippet</h1>
+    <div class="add-snippet-form">
+        <mat-form-field>
+            <mat-label>Title</mat-label>
+            <input matInput [(ngModel)]="newSnippet.title">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Content</mat-label>
+            <textarea matInput [(ngModel)]="newSnippet.content"></textarea>
+        </mat-form-field>
+        <button mat-raised-button (click)="createSnippet()">
+            <mat-icon>add</mat-icon>
+            Add Snippet
+        </button>
+    </div>
+</div>
+<svg viewBox="0 0 500 50" preserveAspectRatio="xMinYMin meet" style="transform: translateY(-2px); margin-bottom: auto">
+    <path d="M0,25 C150,75 350,0 500,25 L500,00 L0,0 Z" style="stroke: none;"></path>
+</svg>
+<div class="contact-spacer"></div>
+<app-contact></app-contact>
