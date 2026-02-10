@@ -22,6 +22,12 @@ h1 {
     justify-content: flex-start;
 }
 
+.snippet-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
 .snippet-card {
     display: flex;
     align-items: center;
