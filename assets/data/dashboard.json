@@ -14,6 +14,11 @@
             "title": "Latex Formatter",
             "icon": "text_fields",
             "url": "/latex-formatter"
+        },
+        {
+            "title": "Snippet Vault",
+            "icon": "archive",
+            "url": "/snippet-vault"
         }
     ]
 }
